@@ -31,15 +31,15 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category');
 // Route::get('sidebar', [YourController::class, 'sidebar']);
 
 
-Route::get('/sidebar', function () {
-    return view('sidebar');
-});
-Route::get('/admin/dashboard', function () {
-    return view('/admin/dashboard');
+// Route::get('/sidebar', function () {
+//     return view('sidebar');
+// });
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
 });
 
 use App\Http\Controllers\BlogController;
 
 Route::get('/blogs', [BlogController::class, 'blog'])->name('blog');
-Route::get('/blogs/create', [BlogController::class, 'create'])->name('create');
+Route::get('/create', [BlogController::class, 'create'])->name('create');
 Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');

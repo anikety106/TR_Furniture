@@ -1,6 +1,6 @@
 <!-- resources/views/blogs/create.blade.php -->
 
-@extends('layouts.main')
+@extends('admin.admin_layouts.main')
 
 @section('main-section')
     <div class="container">

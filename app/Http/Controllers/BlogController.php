@@ -11,13 +11,17 @@ class BlogController extends Controller
 
     public function blog()
     {
-        $blogs = Blog::all(); // Adjust as needed
-        return View('blogs',compact('blogs'));
+        $dashboard = Blog::all(); // Adjust as needed
+        return View('admin.dashboard', compact('dashboard'));
+    }
+    public function dashboard()
+    {
+        return View('admin.dashboard', compact('dashboard'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('admin.create');
     }
 
     public function store(Request $request)
@@ -43,5 +47,4 @@ class BlogController extends Controller
 
         return redirect()->route('blog')->with('success', 'Blog post created successfully!');
     }
-
 }
