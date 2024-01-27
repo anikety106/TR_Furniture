@@ -1,45 +1,71 @@
  @extends('layouts.main')
 
  @section('main-section')
-     <section class="col-2 col-sm-3 col-xl-2 d-flex h-100 " id="sidebar">
-         <div
-             class="d-flex flex-column flex-grow-1 align-items-center align-items-sm-start border px-2 px-sm-3 py-2 text-white ">
-             <a href="/" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                 <span class="fs-5">B<span class="d-none d-sm-inline">ccc</span></span>
-             </a>
-             <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start"
-                 id="menu">
-                 <li class="nav-item">
-                     <a href="#" class="nav-link px-sm-0 px-2">
-                         <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
-                     </a>
-                 </li>
-                 <li>
-                     <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2">
-                         <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
-                     </a>
-                 </li>
-                 <li>
-                     <a href="#" class="nav-link px-sm-0 px-2">
-                         <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                 </li>
-                 <li>
-                     <a href="#" class="nav-link px-sm-0 px-2">
-                         <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span></a>
-                 </li>
-                 <li>
-                     <a href="#" class="nav-link px-sm-0 px-2 text-truncate">
-                         <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="#submenu1" class="nav-link px-sm-0 px-2" data-bs-toggle="collapse" data-bs-target="#submenu1">
-                         <i class="fs-5 bi-star-fill"></i><span class="ms-1 d-none d-sm-inline">Expand <span
-                                 class="bi-caret-down"></span></span>
-                     </a>
-                 </li>
-             </ul>
+     <style>
+         .sidebar {
+             position: fixed;
+             top: 50px;
+             left: 0;
+             height: 100%;
+             width: 200px;
+             /* Adjust the width as needed */
+             background-color: #3a1a1a;
+             /* Example background color */
+             padding: 20px;
+             /* Example padding */
+         }
+     </style>
+
+
+     <div>
+         <div class="sidebar">
+             <div
+                 class="   align-items-center align-items-sm-start border px-2 px-sm-3 py-2  ">
+                 <a href="/"
+                     class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                     <span class="fs-5">B<span class="d-none d-sm-inline">ccc</span></span>
+                 </a>
+                 <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start"
+                     id="menu">
+                     <li class="nav-item">
+                         <a href="#" class="nav-link px-sm-0 px-2">
+                             <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2">
+                             <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#" class="nav-link px-sm-0 px-2">
+                             <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                     </li>
+                     <li>
+                         <a href="#" class="nav-link px-sm-0 px-2">
+                             <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span></a>
+                     </li>
+                     <li>
+                         <a href="#" class="nav-link px-sm-0 px-2 text-truncate">
+                             <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#submenu1" class="nav-link px-sm-0 px-2" data-bs-toggle="collapse"
+                             data-bs-target="#submenu1">
+                             <i class="fs-5 bi-star-fill"></i><span class="ms-1 d-none d-sm-inline">Expand <span
+                                     class="bi-caret-down"></span></span>
+                         </a>
+                     </li>
+                 </ul>
+             </div>
          </div>
-     </section>
+         <div class="container">
+             @include('type.l-shape')
+         </div>
+     </div>
+
+
+
      {{-- <div class="col overflow-auto ">
          <div class="row ">
              <div class="col pt-3">
@@ -165,7 +191,4 @@
              </div>
          </div>
      </div> --}}
-
-     @include('type.l-shape')
-
  @endsection
